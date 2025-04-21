@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Servicio al Cliente</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            margin: 30px; /* Aumentamos el margen general */
+            background: linear-gradient(to right, #b9f4e8, #a9dcf5, #9ebdff);
+            display: flex;
+            flex-direction: column;
+            align-items: center; /* Centra los elementos horizontalmente */
+        }
+
+        h1 {
+            color: #333;
+            margin-bottom: 40px; /* Aumentamos el margen inferior del título */
+            font-size: 2.2em; /* Título un poco más grande */
+        }
+
+        .options-container {
+            width: 90%; /* Aumentamos el ancho del contenedor de las opciones */
+            max-width: 600px; /* Aumentamos el ancho máximo */
+        }
+
+        .option {
+            background-color: #f5f5f5;
+            padding: 20px; /* Aumentamos el padding de cada opción */
+            margin-bottom: 15px; /* Aumentamos el margen inferior entre opciones */
+            border-radius: 8px; /* Bordes más redondeados */
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08); /* Sombra un poco más pronunciada */
+            font-size: 1.1em; /* Texto de las opciones un poco más grande */
+        }
+
+        .option-text {
+            color: #555;
+        }
+
+        .arrow-icon {
+            font-size: 1.5em; /* Flecha más grande */
+            color: #777;
+        }
+
+        .back-button {
+            display: inline-block;
+            padding: 10px 20px; /* Botón de regreso más grande */
+            background-color: #007bff; /* Azul */
+            color: white;
+            border: none;
+            border-radius: 8px; /* Bordes más redondeados */
+            text-decoration: none;
+            font-size: 1em; /* Tamaño de fuente del botón de regreso */
+            margin-top: 40px; /* Aumentamos el margen superior del botón */
+            transition: background-color 0.3s ease; /* Transición suave al pasar el ratón */
+        }
+
+        .back-button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <h1>Servicio al Cliente</h1>
+
+    <div class="options-container">
+        <div class="option">
+            <span class="option-text">¿Como devolver un articulo?</span>
+            <span class="arrow-icon">&gt;</span>
+        </div>
+        <div class="option">
+            <span class="option-text">¿Donde entregan mi paquete?</span>
+            <span class="arrow-icon">&gt;</span>
+        </div>
+        <div class="option">
+            <span class="option-text">¿Cuanto cuesta el envio?</span>
+            <span class="arrow-icon">&gt;</span>
+        </div>
+        <div class="option">
+            <span class="option-text">¿Por que mi pedido se dividio en dos o mas paquetes?</span>
+            <span class="arrow-icon">&gt;</span>
+        </div>
+        <div class="option">
+            <span class="option-text">¿Por que se retraso mi pedido?</span>
+            <span class="arrow-icon">&gt;</span>
+        </div>
+    </div>
+
+    <a href="menu.html" class="back-button">Regresar</a>
+</body>
+</html>

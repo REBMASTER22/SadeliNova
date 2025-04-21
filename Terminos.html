@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Términos y Condiciones</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background-color: #f4f4f4;
+            padding: 2vw;
+        }
+
+        header {
+            background-color: #007BFF;
+            color: white;
+            padding: 1.5vw;
+            text-align: center;
+            font-size: 1.5vw;
+            border-radius: 0.5vw;
+        }
+
+        h1 {
+            font-size: 2.5vw;
+            margin-bottom: 1.5vw;
+        }
+
+        .content {
+            background-color: white;
+            padding: 2vw;
+            border-radius: 0.5vw;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-top: 2vw;
+        }
+
+        .content p {
+            font-size: 1.2vw;
+            line-height: 1.6;
+        }
+
+        .contact-info {
+            margin-top: 2vw;
+            font-size: 1.2vw;
+        }
+
+        .contact-info p {
+            margin: 1vw 0;
+        }
+
+        .back-button {
+            display: inline-block;
+            padding: 0.8vw 1.5vw;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 0.3vw;
+            font-size: 1.2vw;
+            margin-top: 2vw;
+            text-decoration: none;
+            text-align: center;
+            cursor: pointer;
+        }
+
+        .back-button:hover {
+            background-color: #0056b3;
+        }
+
+        .language-selector {
+            position: absolute;
+            top: 2vw;
+            right: 2vw;
+        }
+
+        .language-button {
+            background-color: #ffffff;
+            border: 1px solid #007BFF;
+            padding: 0.5vw 1vw;
+            border-radius: 0.3vw;
+            cursor: pointer;
+            font-size: 1vw;
+            color: #007BFF;
+        }
+
+        .language-button:hover {
+            background-color: #007BFF;
+            color: white;
+        }
+
+        #language-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.5);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal-content {
+            background-color: white;
+            padding: 2vw;
+            border-radius: 0.5vw;
+            text-align: center;
+            width: 80%;
+            max-width: 400px;
+        }
+
+        .language-option {
+            margin: 0.5vw;
+            padding: 1vw 2vw;
+            cursor: pointer;
+            border: none;
+            background-color: #f0f0f0;
+            border-radius: 0.3vw;
+            font-size: 1.2vw;
+            width: 80%;
+            max-width: 200px;
+        }
+
+        .language-option:hover {
+            background-color: #007BFF;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <!-- Selector de idioma -->
+    <div class="language-selector">
+        <button class="language-button" onclick="showLanguageModal()">🌐 Idioma</button>
+    </div>
+
+    <header>
+        <h1 id="main-title">Términos y Condiciones</h1>
+    </header>
+
+    <div class="content">
+        <h2 id="terms-title">Términos y Condiciones</h2>
+        <p id="last-update">Última actualización: 15/06/2023</p>
+        <p id="welcome-text">Bienvenidos a Sadeli Nova. Al acceder a nuestro sitio web, realizar una compra o interactuar con nuestros servicios, aceptas los siguientes términos y condiciones. Si no estás de acuerdo con estos términos, por favor, no utilices nuestros servicios.</p>
+
+        <h3 id="section1-title">1. Información General</h3>
+        <p id="section1-text">Sadeli Nova es una tienda en línea dedicada a la venta de ropa asiática para mujeres. Estos términos y condiciones rigen el uso de nuestro sitio web (www.sadelinova.com) y las compras realizadas a través de él.</p>
+
+        <h3 id="section2-title">2. Registro de Usuario</h3>
+        <p id="section2-text">Para realizar una compra en nuestro sitio, debes proporcionar información veraz y completa al registrarte. Eres responsable de mantener la confidencialidad de tu cuenta y contraseña.</p>
+
+        <h3 id="section3-title">3. Productos</h3>
+        <p id="section3-text">Las imágenes y descripciones de los productos son lo más precisas posible, sin embargo, los colores de los productos pueden variar dependiendo del dispositivo desde el cual se visualicen.</p>
+
+        <h3 id="section4-title">4. Precios</h3>
+        <p id="section4-text">Todos los precios están expresados en USD, y pueden estar sujetos a cambios sin previo aviso. El precio final de tu compra incluirá el costo de los productos seleccionados, más cualquier costo adicional relacionado con el envío, impuestos o cargos aplicables.</p>
+
+        <h3 id="section5-title">5. Pago</h3>
+        <p id="section5-text">Aceptamos varios métodos de pago, incluidos tarjetas de crédito, débito y PayPal. El pago se realizará al momento de la compra, y los productos serán enviados después de la confirmación del pago.</p>
+
+        <h3 id="section6-title">6. Envíos y Entregas</h3>
+        <p id="section6-text">Ofrecemos diferentes opciones de envío, y el costo de envío se calculará al momento de la compra, dependiendo de la ubicación de entrega. El tiempo de entrega estimado es de 5-10 días hábiles.</p>
+
+        <h3 id="section7-title">7. Devoluciones y Reembolsos</h3>
+        <p id="section7-text">Si no estás satisfecho con tu compra, puedes devolver el artículo dentro de 30 días después de la recepción, siempre que el producto esté en su estado original con etiquetas intactas.</p>
+
+        <h3 id="section8-title">8. Política de Privacidad</h3>
+        <p id="section8-text">En Sadeli Nova, tomamos en serio tu privacidad. No compartimos ni vendemos tu información personal a terceros sin tu consentimiento. Todos los datos se manejan según nuestra Política de Privacidad.</p>
+
+        <h3 id="section9-title">9. Propiedad Intelectual</h3>
+        <p id="section9-text">Todos los contenidos de nuestro sitio web, incluidos los textos, imágenes, logotipos, diseños, y marcas, son propiedad exclusiva de Sadeli Nova y están protegidos por las leyes de propiedad intelectual.</p>
+
+        <h3 id="section10-title">10. Modificaciones a los Términos</h3>
+        <p id="section10-text">Sadeli Nova se reserva el derecho de modificar estos términos y condiciones en cualquier momento. Las modificaciones entrarán en vigor en el momento de su publicación en el sitio web.</p>
+
+        <h3 id="section11-title">11. Responsabilidad</h3>
+        <p id="section11-text">No nos hacemos responsables de daños directos, indirectos, incidentales o consecuentes derivados del uso de nuestro sitio o productos, excepto cuando la ley lo exija.</p>
+
+        <h3 id="section12-title">12. Ley Aplicable</h3>
+        <p id="section12-text">Estos términos y condiciones están regidos por las leyes de México. Cualquier disputa relacionada con estos términos será resuelta por los tribunales competentes de la Ciudad de México.</p>
+
+        <h3 id="section13-title">13. Contacto</h3>
+        <p id="contact-text">Si tienes alguna pregunta sobre estos términos y condiciones, por favor contáctanos a través de:</p>
+        <p id="email-text">Correo electrónico: <a href="mailto:contacto@sadelinova.com">contacto@sadelinova.com</a></p>
+        <p id="phone-text">Teléfono: +52 55 1234 5678</p>
+        <p id="hours-text">Horario de atención: Lunes a Viernes de 9:00 a 18:00 hrs</p>
+
+        <button onclick="window.location.href='index.html'" class="back-button" id="back-button">Volver al inicio</button>
+    </div>
+
+    <!-- Modal de selección de idioma -->
+    <div id="language-modal">
+        <div class="modal-content">
+            <h2 id="language-title">Selecciona el Idioma</h2>
+            <button class="language-option" onclick="changeLanguage('es')">Español</button>
+            <button class="language-option" onclick="changeLanguage('en')">English</button>
+            <button class="language-option" onclick="changeLanguage('ko')">한국어</button>
+        </div>
+    </div>
+
+    <script>
+        // Contenido en diferentes idiomas
+        const content = {
+            es: {
+                mainTitle: "Términos y Condiciones",
+                termsTitle: "Términos y Condiciones",
+                lastUpdate: "Última actualización: 15/06/2023",
+                welcomeText: "Bienvenidos a Sadeli Nova. Al acceder a nuestro sitio web, realizar una compra o interactuar con nuestros servicios, aceptas los siguientes términos y condiciones. Si no estás de acuerdo con estos términos, por favor, no utilices nuestros servicios.",
+                section1Title: "1. Información General",
+                section1Text: "Sadeli Nova es una tienda en línea dedicada a la venta de ropa asiática para mujeres. Estos términos y condiciones rigen el uso de nuestro sitio web (www.sadelinova.com) y las compras realizadas a través de él.",
+                section2Title: "2. Registro de Usuario",
+                section2Text: "Para realizar una compra en nuestro sitio, debes proporcionar información veraz y completa al registrarte. Eres responsable de mantener la confidencialidad de tu cuenta y contraseña.",
+                section3Title: "3. Productos",
+                section3Text: "Las imágenes y descripciones de los productos son lo más precisas posible, sin embargo, los colores de los productos pueden variar dependiendo del dispositivo desde el cual se visualicen.",
+                section4Title: "4. Precios",
+                section4Text: "Todos los precios están expresados en USD, y pueden estar sujetos a cambios sin previo aviso. El precio final de tu compra incluirá el costo de los productos seleccionados, más cualquier costo adicional relacionado con el envío, impuestos o cargos aplicables.",
+                section5Title: "5. Pago",
+                section5Text: "Aceptamos varios métodos de pago, incluidos tarjetas de crédito, débito y PayPal. El pago se realizará al momento de la compra, y los productos serán enviados después de la confirmación del pago.",
+                section6Title: "6. Envíos y Entregas",
+                section6Text: "Ofrecemos diferentes opciones de envío, y el costo de envío se calculará al momento de la compra, dependiendo de la ubicación de entrega. El tiempo de entrega estimado es de 5-10 días hábiles.",
+                section7Title: "7. Devoluciones y Reembolsos",
+                section7Text: "Si no estás satisfecho con tu compra, puedes devolver el artículo dentro de 30 días después de la recepción, siempre que el producto esté en su estado original con etiquetas intactas.",
+                section8Title: "8. Política de Privacidad",
+                section8Text: "En Sadeli Nova, tomamos en serio tu privacidad. No compartimos ni vendemos tu información personal a terceros sin tu consentimiento. Todos los datos se manejan según nuestra Política de Privacidad.",
+                section9Title: "9. Propiedad Intelectual",
+                section9Text: "Todos los contenidos de nuestro sitio web, incluidos los textos, imágenes, logotipos, diseños, y marcas, son propiedad exclusiva de Sadeli Nova y están protegidos por las leyes de propiedad intelectual.",
+                section10Title: "10. Modificaciones a los Términos",
+                section10Text: "Sadeli Nova se reserva el derecho de modificar estos términos y condiciones en cualquier momento. Las modificaciones entrarán en vigor en el momento de su publicación en el sitio web.",
+                section11Title: "11. Responsabilidad",
+                section11Text: "No nos hacemos responsables de daños directos, indirectos, incidentales o consecuentes derivados del uso de nuestro sitio o productos, excepto cuando la ley lo exija.",
+                section12Title: "12. Ley Aplicable",
+                section12Text: "Estos términos y condiciones están regidos por las leyes de México. Cualquier disputa relacionada con estos términos será resuelta por los tribunales competentes de la Ciudad de México.",
+                section13Title: "13. Contacto",
+                contactText: "Si tienes alguna pregunta sobre estos términos y condiciones, por favor contáctanos a través de:",
+                emailText: "Correo electrónico: <a href='mailto:contacto@sadelinova.com'>contacto@sadelinova.com</a>",
+                phoneText: "Teléfono: +52 55 1234 5678",
+                hoursText: "Horario de atención: Lunes a Viernes de 9:00 a 18:00 hrs",
+                backButton: "Volver al inicio",
+                languageTitle: "Selecciona el Idioma",
+                languageButton: "🌐 Idioma"
+            },
+            en: {
+                mainTitle: "Terms and Conditions",
+                termsTitle: "Terms and Conditions",
+                lastUpdate: "Last update: 06/15/2023",
+                welcomeText: "Welcome to Sadeli Nova. By accessing our website, making a purchase, or interacting with our services, you agree to the following terms and conditions. If you do not agree with these terms, please do not use our services.",
+                section1Title: "1. General Information",
+                section1Text: "Sadeli Nova is an online store dedicated to selling Asian clothing for women. These terms and conditions govern the use of our website (www.sadelinova.com) and purchases made through it.",
+                section2Title: "2. User Registration",
+                section2Text: "To make a purchase on our site, you must provide truthful and complete information when registering. You are responsible for maintaining the confidentiality of your account and password.",
+                section3Title: "3. Products",
+                section3Text: "Product images and descriptions are as accurate as possible; however, product colors may vary depending on the device used to view them.",
+                section4Title: "4. Prices",
+                section4Text: "All prices are expressed in USD and may be subject to change without notice. The final price of your purchase will include the cost of the selected products plus any additional costs related to shipping, taxes, or applicable charges.",
+                section5Title: "5. Payment",
+                section5Text: "We accept various payment methods, including credit cards, debit cards, and PayPal. Payment will be made at the time of purchase, and products will be shipped after payment confirmation.",
+                section6Title: "6. Shipping and Delivery",
+                section6Text: "We offer different shipping options, and shipping costs will be calculated at the time of purchase depending on the delivery location. Estimated delivery time is 5-10 business days.",
+                section7Title: "7. Returns and Refunds",
+                section7Text: "If you are not satisfied with your purchase, you may return the item within 30 days of receipt, provided the product is in its original condition with tags intact.",
+                section8Title: "8. Privacy Policy",
+                section8Text: "At Sadeli Nova, we take your privacy seriously. We do not share or sell your personal information to third parties without your consent. All data is handled according to our Privacy Policy.",
+                section9Title: "9. Intellectual Property",
+                section9Text: "All content on our website, including texts, images, logos, designs, and trademarks, is the exclusive property of Sadeli Nova and is protected by intellectual property laws.",
+                section10Title: "10. Terms Modifications",
+                section10Text: "Sadeli Nova reserves the right to modify these terms and conditions at any time. Modifications will take effect at the time of their publication on the website.",
+                section11Title: "11. Liability",
+                section11Text: "We are not responsible for direct, indirect, incidental, or consequential damages arising from the use of our site or products, except where required by law.",
+                section12Title: "12. Applicable Law",
+                section12Text: "These terms and conditions are governed by the laws of Mexico. Any dispute related to these terms will be resolved by the competent courts of Mexico City.",
+                section13Title: "13. Contact",
+                contactText: "If you have any questions about these terms and conditions, please contact us through:",
+                emailText: "Email: <a href='mailto:contacto@sadelinova.com'>contacto@sadelinova.com</a>",
+                phoneText: "Phone: +52 55 1234 5678",
+                hoursText: "Business hours: Monday to Friday from 9:00 to 18:00 hrs",
+                backButton: "Back to home",
+                languageTitle: "Select Language",
+                languageButton: "🌐 Language"
+            },
+            ko: {
+                mainTitle: "이용 약관",
+                termsTitle: "이용 약관",
+                lastUpdate: "마지막 업데이트: 2023년 6월 15일",
+                welcomeText: "Sadeli Nova에 오신 것을 환영합니다. 저희 웹사이트에 접속하거나, 구매를 하거나, 서비스를 이용함으로써 다음의 이용 약관에 동의하게 됩니다. 이 약관에 동의하지 않으시면 저희 서비스를 이용하지 마십시오.",
+                section1Title: "1. 일반 정보",
+                section1Text: "Sadeli Nova는 여성을 위한 아시아 의류를 판매하는 온라인 스토어입니다. 이 이용 약관은 저희 웹사이트(www.sadelinova.com)의 사용과 이를 통해 이루어진 구매를 규정합니다.",
+                section2Title: "2. 사용자 등록",
+                section2Text: "저희 사이트에서 구매를 하려면 등록 시 진실되고 완전한 정보를 제공해야 합니다. 귀하는 귀하의 계정과 비밀번호의 기밀 유지에 대한 책임이 있습니다.",
+                section3Title: "3. 제품",
+                section3Text: "제품 이미지와 설명은 최대한 정확하지만, 제품 색상은 이를 보는 기기에 따라 다를 수 있습니다.",
+                section4Title: "4. 가격",
+                section4Text: "모든 가격은 USD로 표시되며, 사전 통보 없이 변경될 수 있습니다. 최종 구매 가격에는 선택한 제품의 비용과 배송, 세금 또는 적용 가능한 추가 비용이 포함됩니다.",
+                section5Title: "5. 결제",
+                section5Text: "저희는 신용카드, 체크카드, PayPal 등 다양한 결제 방법을 허용합니다. 결제는 구매 시 이루어지며, 제품은 결제 확인 후 배송됩니다.",
+                section6Title: "6. 배송",
+                section6Text: "저희는 다양한 배송 옵션을 제공하며, 배송 비용은 배송 위치에 따라 구매 시 계산됩니다. 예상 배송 시간은 영업일 기준 5-10일입니다.",
+                section7Title: "7. 반품 및 환불",
+                section7Text: "구매에 만족하지 못하신 경우, 제품이 원래 상태이고 태그가 부착된 상태일 때 수령 후 30일 이내에 반품할 수 있습니다.",
+                section8Title: "8. 개인정보 보호정책",
+                section8Text: "Sadeli Nova는 귀하의 개인정보를 소중히 여깁니다. 귀하의 동의 없이 귀하의 개인정보를 제3자와 공유하거나 판매하지 않습니다. 모든 데이터는 저희 개인정보 보호정책에 따라 처리됩니다.",
+                section9Title: "9. 지적 재산권",
+                section9Text: "저희 웹사이트의 모든 콘텐츠, 텍스트, 이미지, 로고, 디자인 및 상표는 Sadeli Nova의 독점적 소유이며 지적 재산권 법률에 의해 보호됩니다.",
+                section10Title: "10. 약관 변경",
+                section10Text: "Sadeli Nova는 언제든지 이 이용 약관을 수정할 권리를 보유합니다. 수정 사항은 웹사이트에 게시되는 시점부터 효력이 발생합니다.",
+                section11Title: "11. 책임",
+                section11Text: "저희는 저희 사이트 또는 제품 사용으로 인한 직접적, 간접적, 부수적 또는 결과적 손해에 대해 책임지지 않습니다. 단, 법률이 요구하는 경우는 예외입니다.",
+                section12Title: "12. 적용 법률",
+                section12Text: "이 이용 약관은 멕시코의 법률에 따라 규율됩니다. 이 약관과 관련된 모든 분쟁은 멕시코 시티의 관할 법원에서 해결됩니다.",
+                section13Title: "13. 연락처",
+                contactText: "이 이용 약관에 대해 질문이 있으시면 다음을 통해 문의해 주세요:",
+                emailText: "이메일: <a href='mailto:contacto@sadelinova.com'>contacto@sadelinova.com</a>",
+                phoneText: "전화: +52 55 1234 5678",
+                hoursText: "영업 시간: 월요일부터 금요일까지 오전 9시부터 오후 6시까지",
+                backButton: "홈으로 돌아가기",
+                languageTitle: "언어 선택",
+                languageButton: "🌐 언어"
+            }
+        };
+
+        // Cargar el idioma guardado o usar español por defecto
+        let currentLanguage = localStorage.getItem('selectedLanguage') || 'es';
+
+        // Función para mostrar el modal de idioma
+        function showLanguageModal() {
+            document.getElementById('language-modal').style.display = 'flex';
+        }
+
+        // Función para cambiar el idioma
+        function changeLanguage(language) {
+            if (!content[language]) return;
+            
+            currentLanguage = language;
+            localStorage.setItem('selectedLanguage', language);
+            updateContent();
+            
+            document.getElementById('language-modal').style.display = 'none';
+        }
+
+        // Función para actualizar todo el contenido según el idioma
+        function updateContent() {
+            const langContent = content[currentLanguage];
+            if (!langContent) return;
+            
+            // Actualizar todos los elementos de texto
+            document.getElementById('main-title').textContent = langContent.mainTitle;
+            document.getElementById('terms-title').textContent = langContent.termsTitle;
+            document.getElementById('last-update').textContent = langContent.lastUpdate;
+            document.getElementById('welcome-text').textContent = langContent.welcomeText;
+            document.getElementById('section1-title').textContent = langContent.section1Title;
+            document.getElementById('section1-text').textContent = langContent.section1Text;
+            document.getElementById('section2-title').textContent = langContent.section2Title;
+            document.getElementById('section2-text').textContent = langContent.section2Text;
+            document.getElementById('section3-title').textContent = langContent.section3Title;
+            document.getElementById('section3-text').textContent = langContent.section3Text;
+            document.getElementById('section4-title').textContent = langContent.section4Title;
+            document.getElementById('section4-text').textContent = langContent.section4Text;
+            document.getElementById('section5-title').textContent = langContent.section5Title;
+            document.getElementById('section5-text').textContent = langContent.section5Text;
+            document.getElementById('section6-title').textContent = langContent.section6Title;
+            document.getElementById('section6-text').textContent = langContent.section6Text;
+            document.getElementById('section7-title').textContent = langContent.section7Title;
+            document.getElementById('section7-text').textContent = langContent.section7Text;
+            document.getElementById('section8-title').textContent = langContent.section8Title;
+            document.getElementById('section8-text').textContent = langContent.section8Text;
+            document.getElementById('section9-title').textContent = langContent.section9Title;
+            document.getElementById('section9-text').textContent = langContent.section9Text;
+            document.getElementById('section10-title').textContent = langContent.section10Title;
+            document.getElementById('section10-text').textContent = langContent.section10Text;
+            document.getElementById('section11-title').textContent = langContent.section11Title;
+            document.getElementById('section11-text').textContent = langContent.section11Text;
+            document.getElementById('section12-title').textContent = langContent.section12Title;
+            document.getElementById('section12-text').textContent = langContent.section12Text;
+            document.getElementById('section13-title').textContent = langContent.section13Title;
+            document.getElementById('contact-text').textContent = langContent.contactText;
+            document.getElementById('email-text').innerHTML = langContent.emailText;
+            document.getElementById('phone-text').textContent = langContent.phoneText;
+            document.getElementById('hours-text').textContent = langContent.hoursText;
+            document.getElementById('back-button').textContent = langContent.backButton;
+            document.getElementById('language-title').textContent = langContent.languageTitle;
+            document.querySelector('.language-button').textContent = langContent.languageButton;
+        }
+
+        // Cerrar modal al hacer clic fuera de él
+        window.addEventListener('click', function(event) {
+            if (event.target === document.getElementById('language-modal')) {
+                document.getElementById('language-modal').style.display = 'none';
+            }
+        });
+
+        // Inicializar la página con el idioma correcto
+        document.addEventListener('DOMContentLoaded', function() {
+            updateContent();
+        });
+    </script>
+</body>
+</html>

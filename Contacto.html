@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contactar con la Empresa</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background-color: #f4f4f4;
+            padding: 2vw;
+        }
+
+        header {
+            background-color: #007BFF;
+            color: white;
+            padding: 1.5vw;
+            text-align: center;
+            font-size: 1.5vw;
+            border-radius: 0.5vw;
+        }
+
+        h1 {
+            font-size: 2.5vw;
+            margin-bottom: 1.5vw;
+        }
+
+        .content {
+            background-color: white;
+            padding: 2vw;
+            border-radius: 0.5vw;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-top: 2vw;
+        }
+
+        .content h2 {
+            font-size: 2vw;
+            margin-bottom: 1vw;
+        }
+
+        .content p {
+            font-size: 1.2vw;
+            line-height: 1.6;
+            margin-bottom: 1vw;
+        }
+
+        .form-section {
+            margin-top: 3vw;
+        }
+
+        .form-section input,
+        .form-section textarea {
+            width: 100%;
+            padding: 1vw;
+            margin-bottom: 1vw;
+            border: 1px solid #ccc;
+            border-radius: 0.3vw;
+            font-size: 1vw;
+        }
+
+        .form-section button {
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            padding: 1vw 2vw;
+            font-size: 1.2vw;
+            border-radius: 0.3vw;
+            cursor: pointer;
+        }
+
+        .form-section button:hover {
+            background-color: #0056b3;
+        }
+
+        .back-button {
+            display: inline-block;
+            padding: 0.8vw 1.5vw;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 0.3vw;
+            font-size: 1.2vw;
+            margin-top: 2vw;
+            text-decoration: none;
+            text-align: center;
+        }
+
+        .back-button:hover {
+            background-color: #0056b3;
+        }
+
+        .contact-info {
+            margin-top: 3vw;
+        }
+
+        .contact-info p {
+            font-size: 1.2vw;
+            line-height: 1.6;
+        }
+
+        .contact-info a {
+            color: #007BFF;
+            text-decoration: none;
+        }
+
+        .contact-info a:hover {
+            text-decoration: underline;
+        }
+
+        /* Estilos para el selector de idioma */
+        .language-selector {
+            position: absolute;
+            top: 2vw;
+            right: 2vw;
+        }
+
+        .language-button {
+            background-color: #ffffff;
+            border: 1px solid #007BFF;
+            padding: 0.5vw 1vw;
+            border-radius: 0.3vw;
+            cursor: pointer;
+            font-size: 1vw;
+            color: #007BFF;
+        }
+
+        .language-button:hover {
+            background-color: #007BFF;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <!-- Selector de idioma -->
+    <div class="language-selector">
+        <button class="language-button" onclick="showLanguageModal()">🌐 Idioma</button>
+    </div>
+
+    <header>
+        <h1 id="main-title">Conéctate con Nosotros</h1>
+    </header>
+
+    <div class="content">
+        <h2 id="help-title">Estamos aquí para ayudarte</h2>
+        <p id="help-text">En Sadeli Nova, nos encanta mantenernos cerca de ti y ofrecerte la mejor experiencia de compra. Si tienes alguna pregunta, sugerencia o comentario, no dudes en ponerte en contacto con nosotros. Estamos aquí para ayudarte.</p>
+
+        <div class="contact-info">
+            <h3 id="email-title">Correo Electrónico</h3>
+            <p id="email-text">¿Tienes alguna duda sobre tu pedido o nuestras colecciones? Escríbenos a nuestro correo electrónico y nuestro equipo se pondrá en contacto contigo lo antes posible.</p>
+            <p><strong id="email-label">📧 Correo electrónico:</strong> <a href="mailto:contacto@sadelinova.com">contacto@sadelinova.com</a></p>
+
+            <h3 id="phone-title">Teléfono/WhatsApp</h3>
+            <p id="phone-text">Si prefieres hablar directamente con nosotros, puedes llamarnos o enviarnos un mensaje por WhatsApp. Estamos disponibles para responder a tus inquietudes.</p>
+            <p><strong id="phone-label">📱 Teléfono/WhatsApp:</strong> <a href="tel:+123456789">+1 (234) 567-89</a></p>
+        </div>
+
+        <div class="form-section">
+            <h3 id="form-title">Formulario de contacto</h3>
+            <p id="form-text">Si prefieres escribirnos directamente, por favor rellena el siguiente formulario y nos pondremos en contacto contigo lo antes posible.</p>
+            <form>
+                <input type="text" id="name-input" placeholder="Tu nombre" required>
+                <input type="email" id="email-input" placeholder="Tu correo electrónico" required>
+                <textarea id="message-input" placeholder="Tu mensaje" rows="4" required></textarea>
+                <button type="submit" id="submit-button">Enviar mensaje</button>
+            </form>
+        </div>
+
+        <a href="index.html" class="back-button" id="back-button">Volver al inicio</a>
+    </div>
+
+    <!-- Modal de selección de idioma -->
+    <div id="language-modal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.5); z-index: 1000; justify-content: center; align-items: center;">
+        <div style="background-color: white; padding: 2vw; border-radius: 0.5vw; text-align: center;">
+            <h2 id="language-title">Selecciona el Idioma</h2>
+            <button onclick="changeLanguage('es')" style="margin: 0.5vw; padding: 1vw 2vw; cursor: pointer;">Español</button>
+            <button onclick="changeLanguage('en')" style="margin: 0.5vw; padding: 1vw 2vw; cursor: pointer;">English</button>
+            <button onclick="changeLanguage('ko')" style="margin: 0.5vw; padding: 1vw 2vw; cursor: pointer;">한국어</button>
+        </div>
+    </div>
+
+    <script>
+        // Contenido en diferentes idiomas
+        const content = {
+            es: {
+                mainTitle: "Conéctate con Nosotros",
+                helpTitle: "Estamos aquí para ayudarte",
+                helpText: "En Sadeli Nova, nos encanta mantenernos cerca de ti y ofrecerte la mejor experiencia de compra. Si tienes alguna pregunta, sugerencia o comentario, no dudes en ponerte en contacto con nosotros. Estamos aquí para ayudarte.",
+                emailTitle: "Correo Electrónico",
+                emailText: "¿Tienes alguna duda sobre tu pedido o nuestras colecciones? Escríbenos a nuestro correo electrónico y nuestro equipo se pondrá en contacto contigo lo antes posible.",
+                emailLabel: "📧 Correo electrónico:",
+                phoneTitle: "Teléfono/WhatsApp",
+                phoneText: "Si prefieres hablar directamente con nosotros, puedes llamarnos o enviarnos un mensaje por WhatsApp. Estamos disponibles para responder a tus inquietudes.",
+                phoneLabel: "📱 Teléfono/WhatsApp:",
+                formTitle: "Formulario de contacto",
+                formText: "Si prefieres escribirnos directamente, por favor rellena el siguiente formulario y nos pondremos en contacto contigo lo antes posible.",
+                namePlaceholder: "Tu nombre",
+                emailPlaceholder: "Tu correo electrónico",
+                messagePlaceholder: "Tu mensaje",
+                submitButton: "Enviar mensaje",
+                backButton: "Volver al inicio",
+                languageTitle: "Selecciona el Idioma",
+                languageButton: "🌐 Idioma"
+            },
+            en: {
+                mainTitle: "Contact Us",
+                helpTitle: "We're here to help you",
+                helpText: "At Sadeli Nova, we love staying close to you and providing you with the best shopping experience. If you have any questions, suggestions or comments, please don't hesitate to contact us. We're here to help you.",
+                emailTitle: "Email",
+                emailText: "Do you have any questions about your order or our collections? Write to our email and our team will contact you as soon as possible.",
+                emailLabel: "📧 Email:",
+                phoneTitle: "Phone/WhatsApp",
+                phoneText: "If you prefer to talk directly with us, you can call us or send us a WhatsApp message. We're available to answer your questions.",
+                phoneLabel: "📱 Phone/WhatsApp:",
+                formTitle: "Contact form",
+                formText: "If you prefer to write to us directly, please fill out the following form and we will contact you as soon as possible.",
+                namePlaceholder: "Your name",
+                emailPlaceholder: "Your email",
+                messagePlaceholder: "Your message",
+                submitButton: "Send message",
+                backButton: "Back to home",
+                languageTitle: "Select Language",
+                languageButton: "🌐 Language"
+            },
+            ko: {
+                mainTitle: "연락하기",
+                helpTitle: "저희는 여러분을 도와드리기 위해 여기 있습니다",
+                helpText: "Sadeli Nova에서는 고객과 가까이 지내며 최고의 쇼핑 경험을 제공하는 것을 좋아합니다. 질문, 제안 또는 의견이 있으시면 언제든지 저희에게 연락하십시오. 여러분을 도와드리기 위해 여기 있습니다.",
+                emailTitle: "이메일",
+                emailText: "주문이나 컬렉션에 대해 궁금한 점이 있으신가요? 저희 이메일로 문의해 주시면 팀에서 가능한 한 빨리 연락드리겠습니다.",
+                emailLabel: "📧 이메일:",
+                phoneTitle: "전화/WhatsApp",
+                phoneText: "직접 이야기하고 싶으시면 전화를 걸거나 WhatsApp 메시지를 보내주십시오. 여러분의 질문에 답변해 드리겠습니다.",
+                phoneLabel: "📱 전화/WhatsApp:",
+                formTitle: "연락처 양식",
+                formText: "직접 편지를 보내고 싶으시면 다음 양식을 작성해 주시면 가능한 한 빨리 연락드리겠습니다.",
+                namePlaceholder: "이름",
+                emailPlaceholder: "이메일",
+                messagePlaceholder: "메시지",
+                submitButton: "메시지 보내기",
+                backButton: "홈으로 돌아가기",
+                languageTitle: "언어 선택",
+                languageButton: "🌐 언어"
+            }
+        };
+
+        // Cargar el idioma guardado o usar español por defecto
+        let currentLanguage = localStorage.getItem('selectedLanguage') || 'es';
+
+        // Función para mostrar el modal de idioma
+        function showLanguageModal() {
+            document.getElementById('language-modal').style.display = 'flex';
+        }
+
+        // Función para cambiar el idioma
+        function changeLanguage(language) {
+            currentLanguage = language;
+            localStorage.setItem('selectedLanguage', language);
+            updateContent();
+            document.getElementById('language-modal').style.display = 'none';
+        }
+
+        // Función para actualizar todo el contenido según el idioma
+        function updateContent() {
+            const langContent = content[currentLanguage];
+            
+            // Actualizar todos los textos
+            document.getElementById('main-title').textContent = langContent.mainTitle;
+            document.getElementById('help-title').textContent = langContent.helpTitle;
+            document.getElementById('help-text').textContent = langContent.helpText;
+            document.getElementById('email-title').textContent = langContent.emailTitle;
+            document.getElementById('email-text').textContent = langContent.emailText;
+            document.getElementById('email-label').textContent = langContent.emailLabel;
+            document.getElementById('phone-title').textContent = langContent.phoneTitle;
+            document.getElementById('phone-text').textContent = langContent.phoneText;
+            document.getElementById('phone-label').textContent = langContent.phoneLabel;
+            document.getElementById('form-title').textContent = langContent.formTitle;
+            document.getElementById('form-text').textContent = langContent.formText;
+            document.getElementById('name-input').placeholder = langContent.namePlaceholder;
+            document.getElementById('email-input').placeholder = langContent.emailPlaceholder;
+            document.getElementById('message-input').placeholder = langContent.messagePlaceholder;
+            document.getElementById('submit-button').textContent = langContent.submitButton;
+            document.getElementById('back-button').textContent = langContent.backButton;
+            document.getElementById('language-title').textContent = langContent.languageTitle;
+            document.querySelector('.language-button').textContent = langContent.languageButton;
+        }
+
+        // Cerrar modal al hacer clic fuera de él
+        window.onclick = function(event) {
+            if (event.target === document.getElementById('language-modal')) {
+                document.getElementById('language-modal').style.display = 'none';
+            }
+        }
+
+        // Inicializar la página con el idioma correcto
+        window.onload = function() {
+            updateContent();
+        };
+    </script>
+</body>
+</html>

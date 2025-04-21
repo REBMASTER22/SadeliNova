@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ropa Premium</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            margin: 0;
+            background-color: #add0ef;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 90%;
+            padding: 1vw 0;
+        }
+
+        .logo {
+            font-size: 1.8vw;
+            font-weight: bold;
+        }
+
+        .search-bar {
+            display: flex;
+            border: 1px solid #ccc;
+            border-radius: 0.3vw;
+            overflow: hidden;
+            width: 35%;
+        }
+
+        .search-bar input[type="text"] {
+            padding: 0.5vw;
+            border: none;
+            outline: none;
+            width: 85%;
+            font-size: 0.9vw;
+        }
+
+        .search-button {
+            background-color: transparent;
+            border: none;
+            padding: 0.5vw 0.8vw;
+            cursor: pointer;
+            width: 15%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 1vw;
+        }
+
+        .icons {
+            display: flex;
+            gap: 0.6vw;
+        }
+
+        .icon-button {
+            background: none;
+            border: none;
+            font-size: 1.3vw;
+            cursor: pointer;
+            padding: 0.3vw;
+        }
+
+        .navigation {
+            display: flex;
+            gap: 1.2vw;
+            margin-top: 1.2vw;
+        }
+
+        .dropdown {
+            position: relative;
+        }
+
+        .dropdown-button {
+            background-color: #e0e0e0;
+            color: #333;
+            border: none;
+            padding: 0.6vw 1vw;
+            border-radius: 0.3vw;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            font-size: 0.9vw;
+        }
+
+        .dropdown-button::after {
+            content: '\25BC';
+            margin-left: 0.3vw;
+            font-size: 0.7vw;
+        }
+
+        .main-content {
+            display: flex;
+            justify-content: space-between;
+            gap: 1.5vw;
+            margin-top: 1.5vw;
+            width: 85%;
+        }
+
+        .products-left {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-template-rows: repeat(2, 1fr);
+            gap: 0.0vw;
+            width: 60%;
+        }
+
+        .product-image {
+            width: 50%;
+            height: 17%;
+            object-fit: cover;
+            border-radius: 0.0vw;
+            box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+        }
+
+        .featured-section {
+            width: 35%;
+            display: flex;
+            flex-direction: column;
+            gap: 1vw;
+        }
+
+        .featured-item {
+            border-radius: 0.3vw;
+            overflow: hidden;
+            box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+        }
+
+        .featured-item img {
+            width: 100%;
+            height: 100%;
+            display: block;
+            object-fit: cover;
+        }
+
+        /* Estilos para el menú de configuración */
+        .config-menu {
+            display: none;
+            position: absolute;
+            top: 50px;
+            right: 10px;
+            background-color: white;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            width: 200px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+        }
+
+        .config-menu ul {
+            list-style-type: none;
+            padding: 10px;
+            margin: 0;
+        }
+
+        .config-menu ul li {
+            padding: 8px;
+        }
+
+        .config-menu ul li a {
+            text-decoration: none;
+            color: #333;
+            font-size: 0.9vw;
+        }
+
+        .config-menu ul li a:hover {
+            color: #007BFF;
+        }
+
+        /* Estilos para el modal de idioma */
+        .language-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 2000;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal-content {
+            background-color: white;
+            padding: 2vw;
+            border-radius: 1vw;
+            width: 30%;
+            text-align: center;
+        }
+
+        .language-option {
+            background-color: #e0e0e0;
+            border: none;
+            padding: 1vw 2vw;
+            border-radius: 0.3vw;
+            cursor: pointer;
+            font-size: 1.2vw;
+            margin: 0.5vw;
+            transition: background-color 0.3s;
+        }
+
+        .language-option:hover {
+            background-color: #d0d0d0;
+        }
+
+        .language-option.selected {
+            background-color: #4CAF50;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="logo" id="logo-text">Ropa premium de la marca</div>
+        <div class="search-bar">
+            <input type="text" id="search-placeholder" placeholder="Buscar...">
+            <button class="search-button">🔍</button>
+        </div>
+        <div class="icons">
+            <button class="icon-button">🛒</button>
+            <button class="icon-button">👤</button>
+            <button class="icon-button">☰</button>
+            <button class="icon-button" onclick="toggleConfigMenu()">⚙️</button>
+        </div>
+    </div>
+
+    <nav class="navigation">
+        <div class="dropdown">
+            <button class="dropdown-button" id="categories-btn">Categorías</button>
+        </div>
+        <button class="dropdown-button" id="new-btn">Novedades</button>
+        <div class="dropdown">
+            <button class="dropdown-button" id="locations-btn">Ubicaciones de nova</button>
+        </div>
+    </nav>
+
+    <div class="main-content">
+        <div class="products-left">
+            <div><img src="./imagenes/producto1.png" alt="Producto 1" class="product-image"></div>
+            <div><img src="./imagenes/producto2.png" alt="Producto 2" class="product-image"></div>
+            <div><img src="./imagenes/producto3.png" alt="Producto 3" class="product-image"></div>
+            <div><img src="./imagenes/producto4.png" alt="Producto 4" class="product-image"></div>
+        </div>
+
+        <div class="featured-section">
+            <div class="featured-item">
+                <img src="./imagenes/modelo.png" alt="Modelo" class="featured-image">
+            </div>
+            <div class="featured-item">
+                <img src="./imagenes/vestido.png" alt="Vestido" class="featured-image">
+            </div>
+        </div>
+    </div>
+
+    <!-- Menú de configuración -->
+    <div id="config-menu" class="config-menu">
+        <ul>
+            <li><a href="#" onclick="showLanguageModal()" id="language-option">Idioma</a></li>
+            <li><a href="Terminos.html" id="terms-option">Términos y Condiciones</a></li>
+            <li><a href="Calificaciones.html" id="reviews-option">Calificaciones y Comentarios</a></li>
+            <li><a href="Contacto.html" id="contact-option">Conéctate con nosotros</a></li>
+            <li><a href="Pago.html" id="payment-option">Opciones de pago</a></li>
+            <li><a href="Quien.html" id="about-option">Quiénes somos</a></li>
+        </ul>
+    </div>
+
+    <!-- Modal de selección de idioma -->
+    <div id="language-modal" class="language-modal">
+        <div class="modal-content">
+            <h2 id="language-title">Selecciona el Idioma</h2>
+            <button class="language-option" onclick="changeLanguage('es')">Español</button>
+            <button class="language-option" onclick="changeLanguage('en')">English</button>
+            <button class="language-option" onclick="changeLanguage('ko')">한국어</button>
+        </div>
+    </div>
+
+    <script>
+        // Contenido en diferentes idiomas
+        const content = {
+            es: {
+                logo: "Ropa premium de la marca",
+                searchPlaceholder: "Buscar...",
+                categories: "Categorías",
+                new: "Novedades",
+                locations: "Ubicaciones de nova",
+                configOptions: {
+                    language: "Idioma",
+                    terms: "Términos y Condiciones",
+                    reviews: "Calificaciones y Comentarios",
+                    contact: "Conéctate con nosotros",
+                    payment: "Opciones de pago",
+                    about: "Quiénes somos"
+                },
+                languageTitle: "Selecciona el Idioma"
+            },
+            en: {
+                logo: "Premium brand clothing",
+                searchPlaceholder: "Search...",
+                categories: "Categories",
+                new: "New Arrivals",
+                locations: "Store Locations",
+                configOptions: {
+                    language: "Language",
+                    terms: "Terms and Conditions",
+                    reviews: "Ratings and Reviews",
+                    contact: "Contact Us",
+                    payment: "Payment Options",
+                    about: "About Us"
+                },
+                languageTitle: "Select Language"
+            },
+            ko: {
+                logo: "프리미엄 브랜드 의류",
+                searchPlaceholder: "검색...",
+                categories: "카테고리",
+                new: "신제품",
+                locations: "매장 위치",
+                configOptions: {
+                    language: "언어",
+                    terms: "이용 약관",
+                    reviews: "평가 및 리뷰",
+                    contact: "연락하기",
+                    payment: "결제 옵션",
+                    about: "회사 소개"
+                },
+                languageTitle: "언어 선택"
+            }
+        };
+
+        // Cargar el idioma guardado o usar español por defecto
+        let currentLanguage = localStorage.getItem('selectedLanguage') || 'es';
+
+        // Función para cambiar el idioma
+        function changeLanguage(language) {
+            currentLanguage = language;
+            localStorage.setItem('selectedLanguage', language);
+            updateContent();
+            hideLanguageModal();
+        }
+
+        // Función para actualizar todo el contenido según el idioma
+        function updateContent() {
+            const langContent = content[currentLanguage];
+            
+            // Actualizar textos principales
+            document.getElementById('logo-text').innerText = langContent.logo;
+            document.getElementById('search-placeholder').placeholder = langContent.searchPlaceholder;
+            document.getElementById('categories-btn').innerText = langContent.categories;
+            document.getElementById('new-btn').innerText = langContent.new;
+            document.getElementById('locations-btn').innerText = langContent.locations;
+            document.getElementById('language-title').innerText = langContent.languageTitle;
+            
+            // Actualizar opciones del menú de configuración
+            document.getElementById('language-option').innerText = langContent.configOptions.language;
+            document.getElementById('terms-option').innerText = langContent.configOptions.terms;
+            document.getElementById('reviews-option').innerText = langContent.configOptions.reviews;
+            document.getElementById('contact-option').innerText = langContent.configOptions.contact;
+            document.getElementById('payment-option').innerText = langContent.configOptions.payment;
+            document.getElementById('about-option').innerText = langContent.configOptions.about;
+        }
+
+        // Función para mostrar el modal de idioma
+        function showLanguageModal() {
+            document.getElementById('language-modal').style.display = 'flex';
+            document.getElementById('config-menu').style.display = 'none';
+        }
+
+        // Función para ocultar el modal de idioma
+        function hideLanguageModal() {
+            document.getElementById('language-modal').style.display = 'none';
+        }
+
+        // Función para mostrar/ocultar el menú de configuración
+        function toggleConfigMenu() {
+            const menu = document.getElementById("config-menu");
+            if (menu.style.display === "block") {
+                menu.style.display = "none";
+            } else {
+                menu.style.display = "block";
+            }
+        }
+
+        // Cerrar menús al hacer clic fuera de ellos
+        window.onclick = function(event) {
+            if (!event.target.matches('.icon-button') && !event.target.closest('.config-menu')) {
+                document.getElementById('config-menu').style.display = "none";
+            }
+            if (event.target.classList.contains('language-modal')) {
+                hideLanguageModal();
+            }
+        }
+
+        // Inicializar la página con el idioma correcto
+        window.onload = function() {
+            updateContent();
+        };
+    </script>
+</body>
+</html>

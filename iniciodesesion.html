@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iniciar Sesión</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background: linear-gradient(to right, #b9f4e8, #a9dcf5, #9ebdff);
+        }
+        .login-container {
+            /* Aumentamos el ancho del contenedor */
+            width: 400px; /* Puedes ajustar este valor según lo necesites */
+            padding: 40px; /* Aumentamos el padding para dar más espacio interno */
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .login-container h2 {
+            text-align: center;
+            margin-bottom: 30px; /* Aumentamos el margen inferior del título */
+            font-size: 2em; /* Hacemos el título un poco más grande */
+        }
+        .login-container input[type="email"],
+        .login-container input[type="password"] {
+            width: calc(100% - 22px);
+            padding: 12px; /* Aumentamos el padding de los campos de entrada */
+            margin: 10px 0; /* Aumentamos el margen vertical de los campos de entrada */
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            box-sizing: border-box;
+            font-size: 1em; /* Hacemos el texto dentro de los campos un poco más grande */
+        }
+        .login-container button {
+            width: 100%;
+            padding: 12px; /* Aumentamos el padding del botón */
+            background-color: black;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 1em; /* Hacemos el texto del botón un poco más grande */
+        }
+        .login-container .forgot-password {
+            text-align: center;
+            margin-top: 15px; /* Aumentamos el margen superior del enlace */
+            font-size: 0.9em; /* Ajustamos el tamaño del texto */
+        }
+        .login-container .forgot-password a {
+            color: #3f2b96;
+            text-decoration: none;
+        }
+        .login-container .facebook-login {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 25px; /* Aumentamos el margen superior del botón de Facebook */
+            background-color: #4267B2;
+            color: white;
+            padding: 12px; /* Aumentamos el padding del botón de Facebook */
+            border-radius: 4px;
+            cursor: pointer;
+            text-decoration: none;
+            font-size: 1em; /* Hacemos el texto del botón de Facebook un poco más grande */
+        }
+        .login-container .facebook-login span {
+            margin-left: 10px;
+        }
+    
+        .login-container .top-left-text {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            font-size: 24px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <div class="top-left-text">SADELI 엔 NOVA 스</div>
+        <h2>INICIO SESIÓN</h2>
+        <input type="email" placeholder="EMAIL">
+        <input type="password" placeholder="CONTRASEÑA">
+        <button>ENTRAR</button>
+        <div class="forgot-password">
+            <a href="#">¿OLVIDASTE TU CONTRASEÑA?</a>
+        </div>
+        <a href="https://www.facebook.com/" class="facebook-login" target="_blank"> 
+            <span>f</span>
+            <span>ENTRAR CON FACEBOOK</span>
+        </a>
+    </div>
+</body>
+</html>

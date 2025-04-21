@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Sadeli | Novedades</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', sans-serif;
+            background: linear-gradient(to right, #d7f5dc, #b9d5f7);
+            display: flex;
+            flex-direction: column;
+            align-items: center; /* Centrar el contenedor principal */
+            padding-bottom: 20px;
+        }
+
+        .top-bar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 20px;
+            background-color: transparent;
+            width: 90%;
+            max-width: 1200px; /* Ajusté el ancho máximo */
+        }
+
+        .search-box {
+            display: flex;
+            align-items: center;
+            border: 1px solid #333;
+            padding: 5px 10px;
+            border-radius: 5px;
+            background-color: #fff;
+        }
+
+        .search-box input {
+            border: none;
+            outline: none;
+            font-size: 14px;
+            background: none;
+        }
+
+        .search-box i {
+            margin-left: 5px;
+            color: #888;
+        }
+
+        .nav-icons {
+            display: flex;
+            gap: 15px;
+            font-size: 18px;
+            color: #222;
+        }
+
+        .titulo-top {
+            font-weight: bold;
+            font-size: 18px;
+        }
+
+        .novedades-container {
+            display: flex;
+            flex-direction: row; /* Cambiado a fila */
+            justify-content: space-around; /* Espacio entre los items */
+            align-items: flex-start; /* Alinea los items en la parte superior */
+            width: 95%; /* Ocupa más ancho para la fila */
+            max-width: 1200px;
+            margin-top: 20px;
+            padding: 15px;
+            background-color: #f9f9f9; /* Un fondo ligero para el contenedor */
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .novedad-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 0 10px; /* Espacio horizontal entre los items */
+            padding: 10px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+            width: 18%; /* Ajusta el ancho para que quepan 5 en una fila */
+            flex-grow: 1; /* Permite que los items crezcan si hay espacio */
+        }
+
+        .novedad-item img {
+            width: 80%; /* Ajusta el ancho de la imagen dentro del item */
+            height: auto;
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }
+
+        .precio {
+            font-size: 1em;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 5px;
+            text-align: center;
+        }
+
+        .calificacion {
+            color: gold;
+            font-size: 0.9em;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+
+        .botones-inferiores {
+            display: flex;
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .boton-inferior {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            color: white;
+            font-weight: bold;
+            cursor: pointer;
+            font-size: 1em;
+        }
+
+        .boton-sadeli {
+            background-color: #007bff;
+        }
+
+        .boton-pago {
+            background-color: #28a745;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="top-bar">
+        <div class="search-box">
+            <input type="text" placeholder="Buscar...">
+            <i class="fas fa-search"></i>
+        </div>
+        <div class="titulo-top">Todos los productos de novedad</div>
+        <div class="icons">
+            <a href="carrito.html"><button class="icon-button">🛒</button></a>
+            <a href="iniciodesesion.html"><button class="icon-button">👤</button></a>
+            <a href="menu.html"><button class="icon-button">☰</button></a>
+            <button class="icon-button" onclick="toggleConfigMenu()">⚙️</button>
+        </div>
+           
+        </div>
+    </div>
+
+    <div class="novedades-container">
+        <div class="novedad-item">
+            <img src="./imagenes/10.jpg" alt="Novedad 1">
+            <div class="precio">$530.00</div>
+            <div class="calificacion">
+                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+            </div>
+        </div>
+
+        <div class="novedad-item">
+            <img src="./imagenes/11.jpg" alt="Novedad 2">
+            <div class="precio">$225.81</div>
+            <div class="calificacion">
+                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+            </div>
+        </div>
+
+        <div class="novedad-item">
+            <img src="./imagenes/13.jpg" alt="Novedad 3">
+            <div class="precio">$750.54</div>
+            <div class="calificacion">
+                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+            </div>
+        </div>
+
+        <div class="novedad-item">
+            <img src="./imagenes/15.webp" alt="Novedad 4">
+            <div class="precio">$900.00</div>
+            <div class="calificacion">
+                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+            </div>
+        </div>
+
+        <div class="novedad-item">
+            <img src="./imagenes/17.jpg" alt="Novedad 5">
+            <div class="precio">$300.00</div>
+            <div class="calificacion">
+                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+            </div>
+        </div>
+    </div>
+
+    <div class="botones-inferiores">
+        <a href="index.html"><button>Sadeli Nova</button></a>
+        <a href="pagos.html"><button>Pago</button></a>
+    </div>
+
+    <script>
+        function toggleConfigMenu() {
+            // Aquí puedes implementar la lógica para mostrar/ocultar el menú de configuración
+            console.log("Menú de configuración toggled");
+        }
+    </script>
+
+</body>
+</html>

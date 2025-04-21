@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Dirección de Facturación</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            margin: 20px;
+            background: linear-gradient(to right, #f0f8ff, #e6e6fa); /* Un fondo suave */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .formulario-factura {
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+            width: 90%;
+            max-width: 600px;
+        }
+
+        .formulario-titulo {
+            font-size: 1.8em;
+            font-weight: bold;
+            margin-bottom: 20px;
+            color: #333;
+            text-align: center;
+        }
+
+        .formulario-info {
+            background-color: #f5f5dc; /* Un color suave para la información */
+            padding: 10px;
+            border-radius: 4px;
+            margin-bottom: 15px;
+            font-size: 0.9em;
+            color: #555;
+        }
+
+        .campo-grupo {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 15px;
+        }
+
+        .campo {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .campo label {
+            font-size: 0.95em;
+            color: #333;
+            margin-bottom: 5px;
+        }
+
+        .campo input[type="text"],
+        .campo input[type="tel"],
+        .campo select {
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 1em;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        .campo select {
+            appearance: none; /* Quitar estilos predeterminados del select */
+            background-image: url('data:image/svg+xml;utf8,<svg fill="currentColor" viewBox="0 0 24 24"><path d="M7 10l5 5 5-5z"/></svg>');
+            background-repeat: no-repeat;
+            background-position: right 10px top 50%;
+            background-size: 16px;
+        }
+
+        .campo .opcional {
+            font-size: 0.8em;
+            color: #777;
+            margin-top: 3px;
+        }
+
+        .seguridad-privacidad {
+            font-size: 0.8em;
+            color: #777;
+            margin-top: 20px;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+
+        .boton-guardar {
+            background-color: #333; /* Un color oscuro para el botón */
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            padding: 12px 25px;
+            font-size: 1.1em;
+            cursor: pointer;
+            width: 100%;
+            box-sizing: border-box;
+            transition: background-color 0.3s ease;
+        }
+
+        .boton-guardar:hover {
+            background-color: #555;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="formulario-factura">
+        <h2 class="formulario-titulo">Dirección de facturación</h2>
+        <div class="formulario-info">
+            Como lo requieren las aduanas mexicanas, por favor proporciona tu nombre completo y tu CURP o RFC para garantizar que tu pedido se entregue sin problemas.
+        </div>
+
+        <div class="campo">
+            <label for="ubicacion">Ubicación*</label>
+            <input type="text" id="ubicacion" value="México" readonly>
+        </div>
+
+        <div class="campo-grupo">
+            <div class="campo">
+                <label for="nombre">Nombre*</label>
+                <input type="text" id="nombre" placeholder="ejemplo">
+            </div>
+            <div class="campo">
+                <label for="apellido">Apellido*</label>
+                <input type="text" id="apellido" placeholder="ejemplo">
+            </div>
+        </div>
+
+        <div class="campo-grupo">
+            <div class="campo">
+                <label for="telefono">Número de Teléfono*</label>
+                <div style="display: flex; align-items: center;">
+                    <select style="width: auto; margin-right: 10px;">
+                        <option>MX +52</option>
+                        </select>
+                    <input type="tel" id="telefono" placeholder="1234567890" style="flex-grow: 1;">
+                </div>
+            </div>
+        </div>
+
+        <div class="campo">
+            <label for="direccion">Dirección*</label>
+            <input type="text" id="direccion" placeholder="ejemplo de dirección">
+            <span class="opcional">Número de casa, calle, colonia</span>
+        </div>
+
+        <div class="campo">
+            <label for="referencias">Referencias</label>
+            <input type="text" id="referencias" placeholder="Apartamento, suite, residencia, timbre, etc. (opcional)">
+            <span class="opcional">ej: Edificio blanco, portón azul</span>
+        </div>
+
+        <div class="campo">
+            <label for="codigo_postal">Código postal*</label>
+            <input type="text" id="codigo_postal" placeholder="ej: 12345">
+        </div>
+
+        <div class="campo-grupo">
+            <div class="campo">
+                <label for="estado">Estado/Provincia*</label>
+                <select id="estado">
+                    <option value="">Elige tu estado</option>
+                    <option value="Hidalgo">Hidalgo</option>
+                    </select>
+            </div>
+            <div class="campo">
+                <label for="ciudad">Ciudad*</label>
+                <select id="ciudad">
+                    <option value="">Por favor elige tu ciudad</option>
+                    </select>
+            </div>
+        </div>
+
+        <div class="seguridad-privacidad">
+            Seguridad y privacidad
+            <br>
+            Mantenemos medidas físicas, técnicas y administrativas estándar de la industria para proteger su información personal.
+        </div>
+
+        <button type="submit" class="boton-guardar" onclick="guardarFactura()">Guardar</button>
+    </div>
+
+    <script>
+        function guardarFactura() {
+            // Aquí podrías implementar la lógica para guardar la factura
+            // (por ejemplo, enviando los datos a un servidor)
+
+            // Redirigir a index.html después de "guardar"
+            window.location.href = "index.html";
+        }
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacidad de la Cuenta</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            margin: 40px; /* Aumentamos un poco más el margen general */
+            background: linear-gradient(to right, #b9f4e8, #a9dcf5, #9ebdff);
+            display: flex;
+            flex-direction: column;
+            align-items: center; /* Centra los elementos horizontalmente */
+        }
+
+        h1 {
+            color: #333;
+            margin-bottom: 40px; /* Aumentamos el margen inferior del título */
+            font-size: 2.4em; /* Título un poco más grande */
+        }
+
+        .privacy-section {
+            background-color: #f5f5f5;
+            padding: 40px; /* Aumentamos el padding de la sección */
+            border-radius: 12px; /* Bordes más redondeados */
+            box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1); /* Sombra más pronunciada */
+            width: 95%; /* Aumentamos el ancho de la sección */
+            max-width: 600px; /* Aumentamos el ancho máximo de la sección */
+            text-align: center; /* Centra el texto dentro de la sección */
+        }
+
+        .description {
+            color: #555;
+            margin-bottom: 40px; /* Aumentamos el margen inferior de la descripción */
+            text-align: left; /* Alinea el texto de la descripción a la izquierda */
+            font-size: 1.2em; /* Texto de la descripción un poco más grande */
+            line-height: 1.7; /* Aumentamos el espaciado entre líneas */
+        }
+
+        .toggle-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0; /* Aumentamos el padding vertical */
+            margin-bottom: 20px; /* Aumentamos el margen inferior */
+            border-bottom: 1px solid #eee; /* Separador visual */
+            font-size: 1.2em; /* Texto de los items un poco más grande */
+        }
+
+        .toggle-item:last-child {
+            border-bottom: none; /* Elimina el borde inferior del último elemento */
+        }
+
+        .toggle-label {
+            color: #333;
+        }
+
+        .toggle-switch {
+            width: 60px; /* Interruptor más ancho */
+            height: 30px; /* Interruptor más alto */
+            background-color: #ccc;
+            border-radius: 15px; /* Ajustamos el radio para que sea redondeado */
+            position: relative;
+            cursor: pointer;
+        }
+
+        .toggle-switch::before {
+            content: "";
+            position: absolute;
+            width: 26px; /* Círculo más grande */
+            height: 26px; /* Círculo más grande */
+            background-color: white;
+            border-radius: 50%;
+            top: 2px; /* Ajustamos la posición vertical */
+            left: 2px; /* Ajustamos la posición horizontal */
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .toggle-switch.on {
+            background-color: #007bff;
+        }
+
+        .toggle-switch.on::before {
+            transform: translateX(30px); /* Ajustamos el desplazamiento */
+        }
+
+        .back-button {
+            display: inline-block;
+            padding: 12px 25px; /* Botón de regreso más grande */
+            background-color: #007bff; /* Azul */
+            color: white;
+            border: none;
+            border-radius: 10px; /* Bordes más redondeados */
+            text-decoration: none;
+            font-size: 1.1em;
+            margin-top: 50px; /* Aumentamos el margen superior */
+            transition: background-color 0.3s ease;
+        }
+
+        .back-button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <h1>Privacidad de la Cuenta</h1>
+
+    <div class="privacy-section">
+        <p class="description">Una vez enciendas el botón, aceptas recibir publicidad, marketing, noticias y otra información de SADELI NOVA</p>
+
+        <div class="toggle-item">
+            <span class="toggle-label">Correo electrónico</span>
+            <div class="toggle-switch on"></div>
+        </div>
+
+        <div class="toggle-item">
+            <span class="toggle-label">SMS</span>
+            <div class="toggle-switch"></div>
+        </div>
+
+        <div class="toggle-item">
+            <span class="toggle-label">WhatsApp</span>
+            <div class="toggle-switch"></div>
+        </div>
+    </div>
+
+    <a href="menu.html" class="back-button">Regresar al Menú</a>
+
+    <script>
+        // Script opcional para la funcionalidad de los toggles (simulación visual)
+        const toggles = document.querySelectorAll('.toggle-switch');
+        toggles.forEach(toggle => {
+            toggle.addEventListener('click', function() {
+                this.classList.toggle('on');
+            });
+        });
+    </script>
+</body>
+</html>
+</html>

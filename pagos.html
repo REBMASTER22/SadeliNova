@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Detalle del Producto</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            margin: 20px;
+            background: linear-gradient(to right, #b8f0cb, #a6c9f0);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .contenedor-producto {
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            display: flex;
+            max-width: 900px; /* Ancho máximo del contenedor */
+            width: 95%;
+        }
+
+        .miniaturas {
+            display: flex;
+            flex-direction: column;
+            margin-right: 15px;
+        }
+
+        .miniatura-img {
+            width: 80px;
+            height: 100px;
+            object-fit: cover;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            margin-bottom: 10px;
+            cursor: pointer;
+        }
+
+        .imagen-principal {
+            flex: 1;
+            margin-right: 20px;
+        }
+
+        .imagen-principal img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+        }
+
+        .info-producto {
+            flex: 1;
+            padding: 15px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .nombre-producto {
+            font-size: 1.5em;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .descripcion-breve {
+            color: #555;
+            margin-bottom: 10px;
+        }
+
+        .precio {
+            font-size: 1.2em;
+            color: #007bff;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .color-seleccion {
+            margin-bottom: 15px;
+        }
+
+        .color-titulo {
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .colores {
+            display: flex;
+            gap: 10px;
+        }
+
+        .circulo-color {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            cursor: pointer;
+            border: 1px solid #ccc;
+        }
+
+        .tallas-seleccion {
+            margin-bottom: 15px;
+        }
+
+        .talla-titulo {
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .tallas {
+            display: flex;
+            gap: 10px;
+        }
+
+        .boton-talla {
+            padding: 8px 12px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .detalle-compra-boton {
+            background-color: #f0f0f0;
+            color: #333;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            padding: 10px 15px;
+            margin-top: 20px;
+            cursor: pointer;
+            text-align: left;
+            width: 100%; /* Ancho dentro del info-producto */
+            display: block; /* Para que ocupe todo el ancho y se comporte como bloque */
+            text-decoration: none; /* Elimina el subrayado del enlace si lo usas como <a> */
+        }
+
+        .detalle-compra-boton strong {
+            font-weight: bold;
+            font-size: 1em;
+            display: block; /* Para que ocupe todo el ancho dentro del botón */
+            margin-bottom: 5px; /* Espacio entre el título y la lista */
+        }
+
+        .detalle-compra-boton ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 5px 0;
+        }
+
+        .detalle-compra-boton ul li {
+            font-size: 0.9em;
+            margin-bottom: 3px;
+        }
+
+        .detalle-compra-boton .info-adicional {
+            font-size: 0.8em;
+            color: #777;
+            margin-top: 10px;
+        }
+
+        .evaluacion-cliente {
+            margin-top: 30px;
+            text-align: left;
+            width: 100%; /* Ancho dentro del contenedor principal */
+        }
+
+        .evaluacion-titulo {
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .calificacion {
+            color: gold;
+            font-size: 1.2em;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="contenedor-producto">
+        <div class="miniaturas">
+            <img src="./imagenes/4.jpg" alt="Min 1" class="miniatura-img">
+            <img src="./imagenes/3.jpg" alt="Min 2" class="miniatura-img">
+            <img src="./imagenes/2.jpg" alt="Min 3" class="miniatura-img">
+        </div>
+        <div class="imagen-principal">
+            <img src="./imagenes/cafe ropa.png" alt="Imagen Principal">
+        </div>
+        <div class="info-producto">
+            <h1 class="nombre-producto">Nombre del producto</h1>
+            <p class="descripcion-breve">Breve descripción del producto.</p>
+            <p class="precio">$MXN 1300.00</p>
+
+            <div class="color-seleccion">
+                <p class="color-titulo">Color: blanco</p>
+                <div class="colores">
+                    <div class="circulo-color" style="background-color: black;"></div>
+                    <div class="circulo-color" style="background-color: white; border: 1px solid #333;"></div>
+                    <div class="circulo-color" style="background-color: red;"></div>
+                    <div class="circulo-color" style="background-color: blue;"></div>
+                    <div class="circulo-color" style="background-color: yellow;"></div>
+                    <div class="circulo-color" style="background-color: brown;"></div>
+                </div>
+            </div>
+
+            <div class="tallas-seleccion">
+                <p class="talla-titulo">Tallas</p>
+                <div class="tallas">
+                    <button class="boton-talla">Talla (Ch)</button>
+                    <button class="boton-talla">Talla (XXL)</button>
+                    <button class="boton-talla">Talla (L)</button>
+                </div>
+            </div>
+
+            <a href="factura.html" class="detalle-compra-boton">
+                <strong>Detalle de compra</strong>
+                <ul>
+                    <li> ENVÍO GRATUITO</li>
+                    <li> DESCRIPTOR DE EL ENVÍO A DOMICILIO Y EL MARINO DE COMPRA CON UNA BREVE REPRODUCCIÓN DEL PAGO MÍNIMO</li>
+                    <li> POLÍTICA DE DEVOLUCIONES</li>
+                    <li> MÁS INFORMACIÓN</li>
+                    <li> SEGURIDAD EN LAS COMPRAS</li>
+                </ul>
+                <div class="info-adicional">
+                    PAGOS SEGUROS - TRANSPORTE SEGURO - SERVICIO AL CLIENTE
+                </div>
+            </a>
+        </div>
+    </div>
+
+    <div class="evaluacion-cliente">
+        <h2 class="evaluacion-titulo">Evaluación del cliente</h2>
+        <div class="calificacion">
+            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+        </div>
+    </div>
+
+</body>
+</html>

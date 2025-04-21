@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Opciones de Pago</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background-color: #f4f4f4;
+            padding: 2vw;
+        }
+
+        header {
+            background-color: #007BFF;
+            color: white;
+            padding: 1.5vw;
+            text-align: center;
+            font-size: 1.5vw;
+            border-radius: 0.5vw;
+        }
+
+        h1 {
+            font-size: 2.5vw;
+            margin-bottom: 1.5vw;
+        }
+
+        .content {
+            background-color: white;
+            padding: 2vw;
+            border-radius: 0.5vw;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-top: 2vw;
+        }
+
+        .payment-options {
+            display: flex;
+            flex-direction: column;
+            gap: 2vw;
+        }
+
+        .payment-option {
+            display: flex;
+            align-items: center;
+            gap: 1vw;
+            font-size: 1.2vw;
+        }
+
+        .payment-option img {
+            width: 30px;
+            height: 30px;
+        }
+
+        .back-button {
+            display: inline-block;
+            padding: 0.8vw 1.5vw;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 0.3vw;
+            font-size: 1.2vw;
+            margin-top: 2vw;
+            text-decoration: none;
+            text-align: center;
+            cursor: pointer;
+        }
+
+        .back-button:hover {
+            background-color: #0056b3;
+        }
+
+        .language-selector {
+            position: absolute;
+            top: 2vw;
+            right: 2vw;
+        }
+
+        .language-button {
+            background-color: #ffffff;
+            border: 1px solid #007BFF;
+            padding: 0.5vw 1vw;
+            border-radius: 0.3vw;
+            cursor: pointer;
+            font-size: 1vw;
+            color: #007BFF;
+        }
+
+        .language-button:hover {
+            background-color: #007BFF;
+            color: white;
+        }
+
+        #language-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.5);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal-content {
+            background-color: white;
+            padding: 2vw;
+            border-radius: 0.5vw;
+            text-align: center;
+            width: 80%;
+            max-width: 400px;
+        }
+
+        .language-option {
+            margin: 0.5vw;
+            padding: 1vw 2vw;
+            cursor: pointer;
+            border: none;
+            background-color: #f0f0f0;
+            border-radius: 0.3vw;
+            font-size: 1.2vw;
+            width: 80%;
+            max-width: 200px;
+        }
+
+        .language-option:hover {
+            background-color: #007BFF;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="language-selector">
+        <button class="language-button" onclick="showLanguageModal()">🌐 Idioma</button>
+    </div>
+
+    <header>
+        <h1 id="main-title">Opciones de Pago</h1>
+    </header>
+
+    <div class="content">
+        <h2 id="payment-methods-title">¿Cómo puedes pagar?</h2>
+        <p id="payment-methods-description">A continuación, te mostramos los métodos de pago disponibles para realizar tus compras:</p>
+
+        <div class="payment-options">
+            <div class="payment-option">
+                <img src="./imagenes/visa.jpg" alt="Visa">
+                <span id="credit-card-text">Tarjeta de Crédito (Visa, MasterCard, American Express)</span>
+            </div>
+
+            <div class="payment-option">
+                <img src="./imagenes/pay.jpg" alt="PayPal">
+                <span id="paypal-text">PayPal</span>
+            </div>
+
+            <div class="payment-option">
+                <img src="./imagenes/trasfere.jpg" alt="Transferencia Bancaria">
+                <span id="bank-transfer-text">Transferencia Bancaria</span>
+            </div>
+
+            <div class="payment-option">
+                <img src="./imagenes/pagocon.jpg" alt="Pago Contra Entrega">
+                <span id="cod-text">Pago Contra Entrega</span>
+            </div>
+        </div>
+
+        <a href="index.html" class="back-button" id="back-button">Volver al inicio</a>
+    </div>
+
+    <div id="language-modal">
+        <div class="modal-content">
+            <h2 id="language-title">Selecciona el Idioma</h2>
+            <button class="language-option" onclick="changeLanguage('es')">Español</button>
+            <button class="language-option" onclick="changeLanguage('en')">English</button>
+            <button class="language-option" onclick="changeLanguage('ko')">한국어</button>
+        </div>
+    </div>
+
+    <script>
+        // Contenido en diferentes idiomas
+        const content = {
+            es: {
+                mainTitle: "Opciones de Pago",
+                paymentMethodsTitle: "¿Cómo puedes pagar?",
+                paymentMethodsDescription: "A continuación, te mostramos los métodos de pago disponibles para realizar tus compras:",
+                creditCardText: "Tarjeta de Crédito (Visa, MasterCard, American Express)",
+                paypalText: "PayPal",
+                bankTransferText: "Transferencia Bancaria",
+                codText: "Pago Contra Entrega",
+                backButton: "Volver al inicio",
+                languageTitle: "Selecciona el Idioma",
+                languageButton: "🌐 Idioma"
+            },
+            en: {
+                mainTitle: "Payment Options",
+                paymentMethodsTitle: "How can you pay?",
+                paymentMethodsDescription: "Below are the available payment methods for your purchases:",
+                creditCardText: "Credit Card (Visa, MasterCard, American Express)",
+                paypalText: "PayPal",
+                bankTransferText: "Bank Transfer",
+                codText: "Cash on Delivery",
+                backButton: "Back to home",
+                languageTitle: "Select Language",
+                languageButton: "🌐 Language"
+            },
+            ko: {
+                mainTitle: "결제 옵션",
+                paymentMethodsTitle: "어떻게 결제할 수 있나요?",
+                paymentMethodsDescription: "다음은 구매에 사용할 수 있는 결제 방법입니다:",
+                creditCardText: "신용 카드 (Visa, MasterCard, American Express)",
+                paypalText: "페이팔",
+                bankTransferText: "은행 송금",
+                codText: "착불",
+                backButton: "홈으로 돌아가기",
+                languageTitle: "언어 선택",
+                languageButton: "🌐 언어"
+            }
+        };
+
+        // Cargar el idioma guardado o usar español por defecto
+        let currentLanguage = localStorage.getItem('selectedLanguage') || 'es';
+
+        // Función para mostrar el modal de idioma
+        function showLanguageModal() {
+            document.getElementById('language-modal').style.display = 'flex';
+        }
+
+        // Función para cambiar el idioma
+        function changeLanguage(language) {
+            if (!content[language]) return;
+
+            currentLanguage = language;
+            localStorage.setItem('selectedLanguage', language);
+            updateContent();
+
+            document.getElementById('language-modal').style.display = 'none';
+        }
+
+        // Función para actualizar todo el contenido según el idioma
+        function updateContent() {
+            const langContent = content[currentLanguage];
+            if (!langContent) return;
+
+            document.getElementById('main-title').textContent = langContent.mainTitle;
+            document.getElementById('payment-methods-title').textContent = langContent.paymentMethodsTitle;
+            document.getElementById('payment-methods-description').textContent = langContent.paymentMethodsDescription;
+            document.getElementById('credit-card-text').textContent = langContent.creditCardText;
+            document.getElementById('paypal-text').textContent = langContent.paypalText;
+            document.getElementById('bank-transfer-text').textContent = langContent.bankTransferText;
+            document.getElementById('cod-text').textContent = langContent.codText;
+            document.getElementById('back-button').textContent = langContent.backButton;
+            document.getElementById('language-title').textContent = langContent.languageTitle;
+            document.querySelector('.language-button').textContent = langContent.languageButton;
+        }
+
+        // Cerrar modal al hacer clic fuera de él
+        window.addEventListener('click', function(event) {
+            if (event.target === document.getElementById('language-modal')) {
+                document.getElementById('language-modal').style.display = 'none';
+            }
+        });
+
+        // Inicializar la página con el idioma correcto
+        document.addEventListener('DOMContentLoaded', function() {
+            updateContent();
+        });
+    </script>
+</body>
+</html>

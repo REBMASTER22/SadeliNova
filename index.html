@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ropa Premium</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@500;700&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            font-family: 'Noto Sans KR', sans-serif;
+            margin: 0;
+            background: linear-gradient(to right, #b8f0cb, #a6c9f0);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 90%;
+            padding: 1vw 0;
+        }
+
+        .top-left-text {
+            font-size: 1.8vw;
+            font-weight: 700;
+            color: #000;
+            margin-left: 1vw;
+        }
+
+        .search-bar {
+            display: flex;
+            border: 1px solid #ccc;
+            border-radius: 0.3vw;
+            overflow: hidden;
+            width: 35%;
+        }
+
+        .search-bar input[type="text"] {
+            padding: 0.5vw;
+            border: none;
+            outline: none;
+            width: 85%;
+            font-size: 0.9vw;
+        }
+
+        .search-button {
+            background-color: transparent;
+            border: none;
+            padding: 0.5vw 0.8vw;
+            cursor: pointer;
+            width: 15%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 1vw;
+        }
+
+        .icons {
+            display: flex;
+            gap: 0.6vw;
+        }
+
+        .icon-button {
+            background: none;
+            border: none;
+            font-size: 1.8vw;
+            cursor: pointer;
+            padding: 0.3vw;
+        }
+
+        .navigation {
+            display: flex;
+            gap: 1.2vw;
+            margin-top: 1.2vw;
+        }
+
+        .dropdown-button {
+            background-color: #e0e0e0;
+            color: #333;
+            border: none;
+            padding: 0.6vw 1vw;
+            border-radius: 0.3vw;
+            cursor: pointer;
+            font-size: 0.9vw;
+        }
+
+        .dropdown-button::after {
+            content: '\25BC';
+            margin-left: 0.3vw;
+            font-size: 0.7vw;
+        }
+
+        .main-content {
+            display: flex;
+            justify-content: space-between;
+            gap: 2vw;
+            margin-top: 2vw;
+            width: 90%;
+        }
+
+        .products-left {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1vw;
+            width: 50%;
+        }
+
+        .product-image {
+            width: 58%; /* Reducimos un poco el ancho de 60% a 58% */
+            height: 9.5vw; /* Aumentamos un poco la altura de 9vw a 9.5vw */
+            object-fit: cover;
+            border-radius: 0.5vw;
+            box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.15);
+            display: block;
+            margin: 0 auto;
+        }
+
+        .featured-section {
+            width: 45%;
+            display: flex;
+            flex-direction: row;
+            gap: 1.5vw;
+        }
+
+        .featured-item {
+            flex: 1;
+        }
+
+        .featured-item img {
+            width: 100%;
+            height: auto;
+            aspect-ratio: 3 / 4;
+            object-fit: cover;
+            border-radius: 0.5vw;
+            box-shadow: 2px 2px 7px rgba(0, 0, 0, 0.1);
+        }
+
+        .config-menu {
+            display: none;
+            position: absolute;
+            top: 50px;
+            right: 10px;
+            background-color: white;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            width: 200px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .config-menu ul {
+            list-style-type: none;
+            padding: 10px;
+            margin: 0;
+        }
+
+        .config-menu ul li {
+            padding: 8px;
+        }
+
+        .config-menu ul li a {
+            text-decoration: none;
+            color: #333;
+            font-size: 0.9vw;
+        }
+
+        .config-menu ul li a:hover {
+            color: #007BFF;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="header">
+        <div class="top-left-text">SADELI 엔 NOVA 스</div>
+
+        <div class="search-bar">
+            <input type="text" placeholder="Buscar..." />
+            <button class="search-button">🔍</button>
+        </div>
+
+        <div class="icons">
+            <a href="carrito.html"><button class="icon-button">🛒</button></a>
+            <a href="iniciodesesion.html"><button class="icon-button">👤</button></a>
+            <a href="menu.html"><button class="icon-button">☰</button></a>
+            <button class="icon-button" onclick="toggleConfigMenu()">⚙️</button>
+        </div>
+    </div>
+
+    <nav class="navigation">
+        <a href="novedades.html"><button>Novedades▼</button></a>
+        <a href="ubicaciones.html"><button>Ubicaciones de nova ▼</button></a>
+    </nav>
+
+    <div class="main-content">
+        <div class="products-left">
+            <div><img src="./imagenes/cafe ropa.png" alt="Producto 1" class="product-image" /></div>
+            <div><img src="./imagenes/2.jpg" alt="Producto 2" class="product-image" /></div>
+            <div><img src="./imagenes/3.jpg" alt="Producto 3" class="product-image" /></div>
+            <div><img src="./imagenes/4.jpg" alt="Producto 4" class="product-image" /></div>
+        </div>
+
+        <div class="featured-section">
+            <div class="featured-item">
+                <img src="./imagenes/5.jpg" alt="Modelo destacado" />
+            </div>
+            <div class="featured-item">
+                <img src="./imagenes/6.jpg" alt="Vestido largo" />
+            </div>
+        </div>
+    </div>
+
+    <div id="config-menu" class="config-menu">
+        <ul>
+            <li><a href="idioma.html">Idioma</a></li>
+            <li><a href="Terminos.html">Términos y Condiciones</a></li>
+            <li><a href="Calificaciones.html">Calificaciones y Comentarios</a></li>
+            <li><a href="Contacto.html">Conéctate con nosotros</a></li>
+            <li><a href="Pago.html">Opciones de pago</a></li>
+            <li><a href="Quien.html">Quiénes somos</a></li>
+        </ul>
+    </div>
+
+    <script>
+        function toggleConfigMenu() {
+            const menu = document.getElementById("config-menu");
+            menu.classList.toggle("mostrar");
+            menu.style.display = menu.classList.contains("mostrar") ? "block" : "none";
+        }
+    </script>
+</body>
+</html>

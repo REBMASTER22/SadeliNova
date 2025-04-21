@@ -1,0 +1,90 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Favoritos</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            margin: 20px;
+            background: linear-gradient(to right, #b9f4e8, #a9dcf5, #9ebdff);
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .favorite-card {
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            width: 300px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .favorite-card img {
+            width: 100%;
+            display: block;
+            height: auto;
+        }
+
+        .heart-icon {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            color: #ff4d4d; /* Rojo */
+            font-size: 1.5em;
+        }
+
+        .back-button {
+            display: block;
+            margin-top: 30px;
+            padding: 10px 20px;
+            background-color: #007bff; /* Azul */
+            color: white;
+            border: none;
+            border-radius: 5px;
+            text-decoration: none;
+            text-align: center;
+            font-weight: bold;
+        }
+
+        .back-button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <h1>Favoritas</h1>
+    <div class="container">
+        <div class="favorite-card">
+            <span class="heart-icon">❤️</span>
+            <img src="./imagenes/5.jpg" alt="Favorito 1">
+            </div>
+
+        <div class="favorite-card">
+            <span class="heart-icon">❤️</span>
+            <img src="./imagenes/6.jpg" alt="Favorito 2">
+            </div>
+
+        <div class="favorite-card">
+            <span class="heart-icon">❤️</span>
+            <img src="./imagenes/7.jpg"alt="Favorito 3">
+            </div>
+    </div>
+
+    <a href="menu.html" class="back-button">Regresar al Menú</a>
+</body>
+</html>

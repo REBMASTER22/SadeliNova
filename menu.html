@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menú</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background: linear-gradient(to right, #b0e0e6, #87ceeb); /* Fondo degradado */
+        }
+        .menu-container {
+            /* Aumentamos el ancho y el padding del contenedor */
+            width: 350px; /* Un poco más ancho */
+            padding: 30px; /* Más espacio alrededor del contenido */
+            text-align: left;
+            background-color: #f8f8f8; /* Un fondo ligeramente más claro */
+            border-radius: 8px; /* Bordes más redondeados */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15); /* Una sombra más marcada */
+        }
+        .menu-container h1 {
+            font-size: 2.5em; /* Título más grande */
+            margin-bottom: 30px; /* Más espacio debajo del título */
+            text-align: center; /* Centramos el título */
+            color: #333; /* Color de texto más oscuro */
+        }
+        .menu-container button {
+            width: 100%;
+            padding: 18px; /* Botones más altos */
+            margin: 10px 0; /* Más espacio entre los botones */
+            border: none;
+            border-radius: 8px; /* Bordes más redondeados para los botones */
+            background-color: #d3d3d3; /* Color gris claro */
+            color: black;
+            font-size: 1.1em; /* Texto del botón un poco más grande */
+            cursor: pointer;
+            transition: background-color 0.3s ease; /* Transición suave al pasar el ratón */
+        }
+        .menu-container button:hover {
+            background-color: #c0c0c0; /* Un gris un poco más oscuro al pasar el ratón */
+        }
+        .menu-container a {
+            text-decoration: none; /* Quitamos el subrayado de los enlaces */
+            display: block; /* Hacemos que los enlaces ocupen todo el ancho del botón */
+        }
+    </style>
+</head>
+<body>
+    <div class="menu-container">
+        <h1>Menú</h1>
+        <a href="favoritas.html"><button>FAVORITAS</button></a>
+        <a href="servicio.html"><button>Servicio al cliente</button></a>
+        <a href="compras.html"><button>COMPRAS</button></a>
+        <a href="privacidad.html"><button>Privacidad de cuenta</button></a>
+        <a href="iniciodesesion.html"><button>Regresar a Inicio de Sesión</button></a>
+    </div>
+</body>
+</html>
